@@ -80,8 +80,7 @@ class DeviceManagement with UiLoggy {
 
     final envelope = await transport.sendRequest(
         uri,
-        transport.envelope(
-            null,
+        transport.securedEnvelope(
             soap.DeviceManagementRequest.capabilities(
                 capabilityCategory.value)));
 
@@ -278,8 +277,8 @@ class DeviceManagement with UiLoggy {
 
     final envelope = await transport.sendRequest(
         uri,
-        transport.envelope(
-            null, soap.DeviceManagementRequest.systemDateAndTime()));
+        transport.securedEnvelope(
+            soap.DeviceManagementRequest.systemDateAndTime()));
 
     if (envelope.body.hasFault) {
       throw Exception(envelope.body.fault.toString());

@@ -9,8 +9,8 @@ part 'analytics_capabilities.g.dart';
 @JsonSerializable()
 class AnalyticsCapabilities {
   /// Analytics service URI.
-  @JsonKey(name: 'XAddr', fromJson: OnvifUtil.mappedToString)
-  final String xAddr;
+  @JsonKey(name: 'XAddr', fromJson: OnvifUtil.nullableMappedToString)
+  final String? xAddr;
 
   /// Indicates whether or not rules are supported.
   @JsonKey(name: 'RuleSupport', fromJson: OnvifUtil.mappedToBool)
